@@ -122,7 +122,7 @@ bool Controller::handleKey(char key) {
                 snake.setDirection(Vector2D(0, -1));
             break;
         case 'a':
-            if (!(snake.getDirection() == Vector2D(1, 1)))
+            if (!(snake.getDirection() == Vector2D(1, 0)))
                 snake.setDirection(Vector2D(-1, 0));
             break;
         case 's':
