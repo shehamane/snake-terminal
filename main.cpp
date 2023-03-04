@@ -17,7 +17,7 @@ std::vector<std::string> TEST_PATTERN = {
 
 int main() {
     try {
-        Controller game(TEST_PATTERN, 30);
+        Controller game(TEST_PATTERN, 15);
         game.start();
     }
     catch (char const *e) {

@@ -30,13 +30,16 @@ void Controller::initTermios() {
     currentIO = oldIO;
     currentIO.c_lflag &= ~ICANON;
     currentIO.c_lflag &= ~ECHO;
-    system("xset r rate 100 10");
+    currentIO.c_cc[VMIN] = 0;
+    currentIO.c_cc[VTIME] = 0;
+
+//    system("xset r rate 100 10");
     tcsetattr(tty, TCSANOW, &currentIO);
 }
 
 void Controller::resetTermios() {
     tcsetattr(0, TCSANOW, &oldIO);
-    system("xset r rate 600 25");
+//    system("xset r rate 600 25");
 }
 
 char Controller::getKey() {
